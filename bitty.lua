@@ -217,7 +217,7 @@ end
 --  bunset(11, 1) --> 9 (1011 --> 1001)
 local function bunset(x, bit, ...)
 	if not bit then return x end
-	return bunset(band(x, bnot(2^bit, ceil(log(x, 2)))), ...)
+	return bunset(band(x, x - 2 ^ bit), ...)
 end
 
 local function repr(x)
